@@ -1,83 +1,67 @@
-# Go Programming Learning Repository
+# Go Programming
 
-Welcome to my Go Programming learning repository! This is a collection of Go code examples, exercises, and projects as I learn and practice the Go programming language.
+My Go learning repository: language exercises as I learn, plus small projects I
+build along the way. Everything lives in one Go module.
 
-## What's Inside
+## Structure
 
-This repository contains:
-- Basic Go syntax and fundamentals
-- Control flow structures (if/else, for loops, switch statements)
-- Functions and anonymous functions
-- Pointers and memory management
-- Goroutines and concurrency
-- Type switching and interfaces
-- Constants and variables
-- And more...
+```
+.
+├── go.mod                 # one module for the whole repo
+├── learning/              # language exercises, one folder per topic
+│   ├── basics/            # variables, loops, if/switch mixed practice
+│   ├── variables/
+│   ├── for-loop/
+│   ├── if-else/
+│   ├── pointers/
+│   ├── pointer-challenge/ # Employee Salary Manager exercise
+│   ├── slices/
+│   ├── maps/
+│   ├── interfaces/
+│   ├── enums/
+│   ├── error/
+│   ├── strings-runes/
+│   └── user-input/
+└── projects/              # small projects (see projects/README.md)
+```
 
-## Topics Covered
+Each folder is its own `package main` program.
 
-- **Basics**: Variables, constants, data types, operators
-- **Control Flow**: if/else statements, switch statements, type switches
-- **Loops**: for loops, infinite loops, range-based loops
-- **Functions**: Function declarations, anonymous functions, defer
-- **Pointers**: Pointer basics, dereferencing, address-of operator
-- **Concurrency**: Goroutines, channels, concurrency patterns
-- **Memory Management**: Stack vs Heap, garbage collection, make and new
+## Running
 
-## Getting Started
+Run any exercise or project by pointing `go run` at its folder:
 
-### Prerequisites
-- Go installed on your machine (Download from [golang.org](https://golang.org/))
-- A terminal or command line interface
-- Basic understanding of programming concepts
-
-### Installation
-
-1. Clone this repository:
 ```bash
-git clone https://github.com/1122Louis/Go-Prgrammming.git
-cd Go-Prgrammming
+go run ./learning/pointers
+go run ./learning/pointer-challenge
+go run ./projects/<name>
 ```
 
-2. Navigate to any example directory and run the code:
+Build all packages to check they compile:
+
 ```bash
-go run main.go
+go build ./...
 ```
 
-## Directory Structure
+## Adding a new project
 
+```bash
+mkdir projects/my-project        # create the folder
+# add projects/my-project/main.go with package main + func main()
+go run ./projects/my-project     # run it
 ```
-Go-Prgrammming/
-├── main.go              (Basic examples and practice)
-├── Pointer/             (Pointer concepts and examples)
-└── ... (additional learning modules)
-```
 
-## How to Use This Repository
+See [`projects/README.md`](projects/README.md) for the full pattern.
 
-1. **Learn**: Browse through the code examples and comments to understand Go concepts
-2. **Practice**: Modify the code, experiment, and try to solve the exercises
-3. **Experiment**: Create your own variations and test different approaches
-4. **Run**: Execute files using `go run` to see output and test your changes
+## Prerequisites
+
+- [Go](https://golang.org/) installed (this repo uses Go 1.26).
 
 ## Resources
 
-- [Official Go Documentation](https://golang.org/doc/)
+- [A Tour of Go](https://go.dev/tour/)
 - [Go by Example](https://gobyexample.com/)
-- [A Tour of Go](https://tour.golang.org/)
-- [Effective Go](https://golang.org/doc/effective_go)
-
-## Notes
-
-This repository is a work in progress and will be updated as I continue learning Go. Each file contains comments explaining key concepts and patterns.
-
-## Contributing
-
-This is a personal learning repository, but feel free to fork it and use it as a reference for your own Go learning journey!
-
-## Contact
-
-For questions or suggestions, feel free to reach out!
+- [Effective Go](https://go.dev/doc/effective_go)
 
 ---
 
